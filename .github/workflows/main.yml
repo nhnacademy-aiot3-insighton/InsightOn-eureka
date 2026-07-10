@@ -1,0 +1,11 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    uses: nhnacademy-aiot3-insighton/.github/.github/workflows/reusable-spring-ci.yml@feature/ci-cd
