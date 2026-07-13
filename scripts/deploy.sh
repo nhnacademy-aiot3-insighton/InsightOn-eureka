@@ -15,7 +15,7 @@ deploy_replica() {
 
   echo "----- Deploying $name (profile $profile, port $port) -----"
 
-  docker stop "$name" > /dev/null 2>&1 || true
+  docker stop -t 15 "$name" > /dev/null 2>&1 || true
   docker rm "$name" > /dev/null 2>&1 || true
 
   docker run -d \
