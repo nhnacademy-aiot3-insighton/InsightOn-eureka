@@ -18,6 +18,6 @@ WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 
 HEALTHCHECK --interval=10s --timeout=3s --start-period=30s --retries=3 \
-  CMD curl -f -u ${USERNAME}:${USERPASSWORD} http://localhost:8761/actuator/health || exit 1
+  CMD curl -f http://localhost:8761/actuator/health || exit 1
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
