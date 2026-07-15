@@ -8,5 +8,8 @@ on:
 
 jobs:
   call-reusable:
+    permissions:
+      contents: read
+      packages: write
     uses: nhnacademy-aiot3-insighton/InsightOn-infra/.github/workflows/eureka-ci-cd.yml@feature/ci-cd-deploy
     secrets: inherit
